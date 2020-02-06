@@ -4,8 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'ACF_To_REST_API_ACF_API' ) ) {
-	class ACF_To_REST_API_ACF_API {
+if ( ! class_exists( 'REST_ACF_ACF_API' ) ) {
+	class REST_ACF_ACF_API {
 		protected $id            = null;
 		protected $type          = null;
 		protected $controller    = null;
@@ -26,7 +26,7 @@ if ( ! class_exists( 'ACF_To_REST_API_ACF_API' ) ) {
 						$this->id = 'user_' . $this->id;
 						break;
 					default :
-						if ( 'ACF_To_REST_API_Terms_Controller' == $this->controller ) {
+						if ( 'REST_ACF_Terms_Controller' == $this->controller ) {
 							$this->id = $this->type . '_' . $this->id;
 						}
 						break;

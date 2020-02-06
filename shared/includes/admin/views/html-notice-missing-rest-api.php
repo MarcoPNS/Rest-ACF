@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$is_installed = ACF_To_REST_API::is_plugin_installed( 'rest-api' );
+$is_installed = REST_ACF::is_plugin_installed( 'rest-api' );
 
 $target = false;
 $action = __( 'Install', 'acf-to-rest-api' );

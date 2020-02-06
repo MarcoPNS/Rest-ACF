@@ -4,8 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'ACF_To_REST_API_Controller' ) ) {
-	class ACF_To_REST_API_Controller extends WP_REST_Controller {
+if ( ! class_exists( 'REST_ACF_Controller' ) ) {
+	class REST_ACF_Controller extends WP_REST_Controller {
 		protected $acf        = null;
 		protected $type       = null;
 		protected $controller = null;
@@ -18,7 +18,7 @@ if ( ! class_exists( 'ACF_To_REST_API_Controller' ) ) {
 
 		public function __construct( $type = null ) {
 			$this->namespace = 'acf/v3';
-			$this->acf = new ACF_To_REST_API_ACF_API( $this->type, get_class( $this ) );
+			$this->acf = new REST_ACF_ACF_API( $this->type, get_class( $this ) );
 		}
 
 		public function register_hooks() {

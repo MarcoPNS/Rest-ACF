@@ -88,10 +88,10 @@ See below how to select the Request API Version.
 
 ![Choose request API version](http://airesgoncalves.com.br/screenshot/acf-to-rest-api/readme/request-api-version-v3.jpg)
 
-The other alternative is to define the constant `ACF_TO_REST_API_REQUEST_VERSION` in your `wp-config.php`
+The other alternative is to define the constant `REST_ACF_REQUEST_VERSION` in your `wp-config.php`
 
 ```PHP
-define( 'ACF_TO_REST_API_REQUEST_VERSION', 2 );
+define( 'REST_ACF_REQUEST_VERSION', 2 );
 ```
 
 Field Settings

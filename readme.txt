@@ -1,10 +1,9 @@
-=== ACF to REST API ===
-Contributors: airesvsg
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=airesvsg%40gmail%2ecom&lc=BR&item_name=Aires%20Goncalves&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest
+=== REST ACF ===
+Contributors: airesvsg, MarcoPNS
 Tags: acf, api, rest, wp-api, wp-rest-api, json, wp, wordpress, wp-rest-api, wordpress-rest-api
-Requires at least: 4.6
-Tested up to: 4.9.1
-Stable tag: 3.1.0
+Requires at least: 5.0
+Tested up to: 5.3.2
+Stable tag: 4.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,11 +12,11 @@ Exposes Advanced Custom Fields Endpoints in the WordPress REST API
 == Description ==
 Exposes [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) Endpoints in the [WordPress REST API](https://developer.wordpress.org/rest-api/)
 
-**See details on GitHub:** [https://github.com/airesvsg/acf-to-rest-api/](https://github.com/airesvsg/acf-to-rest-api/)
+**See details on GitHub:** [https://github.com/airesvsg/acf-to-rest-api/](https://github.com/airesvsg/rest-acf/)
 
 == Installation ==
-1. Copy the `acf-to-rest-api` folder into your `wp-content/plugins` folder
-2. Activate the `ACF to REST API` plugin via the plugin admin page
+1. Copy the `rest-acf` folder into your `wp-content/plugins` folder
+2. Activate the `Rest-ACF` plugin via the plugin admin page
 
 == Changelog ==
 

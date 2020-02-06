@@ -4,8 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'ACF_To_REST_API_Options_Controller' ) ) {
-	class ACF_To_REST_API_Options_Controller extends ACF_To_REST_API_Controller {
+if ( ! class_exists( 'REST_ACF_Options_Controller' ) ) {
+	class REST_ACF_Options_Controller extends REST_ACF_Controller {
 		public function __construct() {
 			$this->type      = 'option';
 			$this->rest_base = 'options';
