@@ -4,18 +4,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'REST_ACF_V3' ) ) {
-	class REST_ACF_V3 {
+if ( ! class_exists( 'REST_ACF_V4' ) ) {
+	class REST_ACF_V4 {
 		public static function includes() {
-			require_once dirname( __FILE__ ) . '/lib/class-rest-api-acf-api.php';
-			require_once dirname( __FILE__ ) . '/lib/class-rest-api-acf-field-settings.php';
-			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-api-controller.php';
-			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-api-posts-controller.php';
-			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-api-terms-controller.php';
-			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-api-comments-controller.php';
-			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-api-attachments-controller.php';
-			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-api-options-controller.php';
-			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-api-users-controller.php';
+			require_once dirname( __FILE__ ) . '/lib/class-rest-acf-api.php';
+			require_once dirname( __FILE__ ) . '/lib/class-rest-acf-field-settings.php';
+			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-acf-controller.php';
+			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-acf-posts-controller.php';
+			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-acf-terms-controller.php';
+			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-acf-comments-controller.php';
+			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-acf-attachments-controller.php';
+			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-acf-options-controller.php';
+			require_once dirname( __FILE__ ) . '/lib/endpoints/class-rest-acf-users-controller.php';
 		}
 
 		public static function create_rest_routes() {

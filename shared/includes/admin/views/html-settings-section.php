@@ -5,4 +5,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<p><?php esc_html_e( 'Choose your request api version', 'acf-to-rest-api' ); ?></p>
+<p><?php esc_html_e( 'Choose your request api version', 'rest-acf' ); ?></p>

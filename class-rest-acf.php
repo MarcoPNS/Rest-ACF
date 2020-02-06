@@ -44,8 +44,8 @@ if ( ! class_exists( 'REST_ACF' ) ) {
 				if ( is_admin() ) {
 					require_once dirname( __FILE__ ) . '/shared/lib/class-rest-acf-settings.php';
 				}
-				self::instance()->includes();
 			}
+            self::instance()->includes();
 		}
 
 		public static function handle_request_version() {
@@ -65,7 +65,7 @@ if ( ! class_exists( 'REST_ACF' ) ) {
 			if ( self::is_plugin_active( 'all' ) ) {
 				add_action( 'rest_api_init', array( __CLASS__, 'create_rest_routes' ), 10 );
 				if ( self::$default_request_version == self::handle_request_version() ) {
-					REST_ACF_ACF_Field_Settings::hooks();
+					REST_ACF_Field_Settings::hooks();
 				}
 			} else {
 				add_action( 'admin_notices', array( __CLASS__, 'missing_notice' ) );
@@ -74,8 +74,8 @@ if ( ! class_exists( 'REST_ACF' ) ) {
 		}
 
 		public static function load_plugin_textdomain() {
-			$locale = apply_filters( 'plugin_locale', get_locale(), 'acf-to-rest-api' );
-			load_textdomain( 'acf-to-rest-api', untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/languages/' . $locale . '.mo' );
+			$locale = apply_filters( 'plugin_locale', get_locale(), 'rest-acf' );
+			load_textdomain( 'rest-acf', untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/languages/' . $locale . '.mo' );
 		}
 
 		public static function create_rest_routes() {

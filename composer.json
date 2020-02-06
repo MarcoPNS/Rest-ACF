@@ -1,10 +1,10 @@
 {
-  "name": "airesvsg/acf-to-rest-api",
+  "name": "airesvsg/rest-acf",
   "description": "Exposes Advanced Custom Fields Endpoints in the WordPress REST API",
   "type": "wordpress-plugin",
   "version": "3.1.0",
   "keywords": ["wordpress", "wp", "rest-api", "acf", "wp-api", "json", "wordpres-plugin", "fields"],
-  "homepage": "https://github.com/airesvsg/acf-to-rest-api",
+  "homepage": "https://github.com/airesvsg/rest-acf",
   "license": "GPL-2.0-only",
   "authors": [
     {
@@ -16,7 +16,7 @@
   ],
   "support": {
     "email": "airesvsg@gmail.com",
-    "issues": "https://github.com/airesvsg/acf-to-rest-api/issues"
+    "issues": "https://github.com/airesvsg/rest-acf/issues"
   },
   "require": {
     "php": ">=5.3.2",

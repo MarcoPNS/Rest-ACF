@@ -12,7 +12,7 @@ Exposes Advanced Custom Fields Endpoints in the WordPress REST API
 == Description ==
 Exposes [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) Endpoints in the [WordPress REST API](https://developer.wordpress.org/rest-api/)
 
-**See details on GitHub:** [https://github.com/airesvsg/acf-to-rest-api/](https://github.com/airesvsg/rest-acf/)
+**See details on GitHub:** [https://github.com/airesvsg/rest-acf/](https://github.com/airesvsg/rest-acf/)
 
 == Installation ==
 1. Copy the `rest-acf` folder into your `wp-content/plugins` folder
@@ -36,10 +36,10 @@ changing default value to acf field setting
 fix default params bug
 
 = 3.0.0-beta =
-more readable endpoints ( https://github.com/airesvsg/acf-to-rest-api/issues/46 ) - Thanks to Imaginet
-change return when acf filed key is empty ( https://github.com/airesvsg/acf-to-rest-api/issues/48 ) - Thanks to Joris Verbogt
-multiple custom options pages ( https://github.com/airesvsg/acf-to-rest-api/issues/85 ) - Thanks to Alex Patton
-bugfix ACF key in taxonomy ( https://github.com/airesvsg/acf-to-rest-api/issues/43 ) - Thanks to Cesar Denis
+more readable endpoints ( https://github.com/airesvsg/rest-acf/issues/46 ) - Thanks to Imaginet
+change return when acf filed key is empty ( https://github.com/airesvsg/rest-acf/issues/48 ) - Thanks to Joris Verbogt
+multiple custom options pages ( https://github.com/airesvsg/rest-acf/issues/85 ) - Thanks to Alex Patton
+bugfix ACF key in taxonomy ( https://github.com/airesvsg/rest-acf/issues/43 ) - Thanks to Cesar Denis
 depreacted filter acf/rest_api/type
 depreacted filter acf/rest_api/types
 depreacted filter acf/rest_api/default_rest_base

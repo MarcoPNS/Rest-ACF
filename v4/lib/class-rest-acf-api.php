@@ -4,8 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'REST_ACF_ACF_API' ) ) {
-	class REST_ACF_ACF_API {
+if ( ! class_exists( 'REST_ACF_API' ) ) {
+	class REST_ACF_API {
 		protected $id            = null;
 		protected $type          = null;
 		protected $controller    = null;

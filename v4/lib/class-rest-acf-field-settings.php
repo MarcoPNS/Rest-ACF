@@ -4,8 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'REST_ACF_ACF_Field_Settings' ) ) {
-	class REST_ACF_ACF_Field_Settings {
+if ( ! class_exists( 'REST_ACF_Field_Settings' ) ) {
+	class REST_ACF_Field_Settings {
 		private function __construct() {}
 
 		public static function hooks() {

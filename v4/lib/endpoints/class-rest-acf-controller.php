@@ -17,8 +17,8 @@ if ( ! class_exists( 'REST_ACF_Controller' ) ) {
 		);
 
 		public function __construct( $type = null ) {
-			$this->namespace = 'acf/v3';
-			$this->acf = new REST_ACF_ACF_API( $this->type, get_class( $this ) );
+			$this->namespace = 'acf/V4';
+			$this->acf = new REST_ACF_API( $this->type, get_class( $this ) );
 		}
 
 		public function register_hooks() {
