@@ -25,7 +25,7 @@ Endpoints
 
 | Endpoint | READABLE | EDITABLE |
 |----------|:--------:|:--------:|
-| /wp-json/acf/v4/posts | ✅ | ❌ |
+| `/wp-json/acf/v4/posts` | ✅ | ❌ |
 | /wp-json/acf/v4/posts/**{id}** | ✅ | ✅ |
 | /wp-json/acf/v4/posts/**{id}**/**{field-name}** | ✅ | ✅ |
 | /wp-json/acf/v4/pages  | ✅ | ❌ |
@@ -71,19 +71,32 @@ add_filter( 'acf/rest_api/item_permissions/get', function( $permission ) {
 
 Request API version
 ====
-See below how to select the Request API Version.
+With this Version of the Plugin you can only use v4. If you want to use older version then check out https://github.com/airesvsg/acf-to-rest-api 
 
-1. Open the plugins page;
-2. Click the settings link under the pluing name ( `ACF to REST API` );
-3. Select your version in the `ACF to REST API` session;
-4. Click in the button Save changes.
+Edit Fields
+====
+For Example: If you want to edit the fields of a custom post_type then you just need to send a `POST` to `/wp-json/acf/v4/**post_type**/**{id}**`
 
-![Choose request API version](http://airesgoncalves.com.br/screenshot/rest-acf/readme/request-api-version-v3.jpg)
+the first key need to be `fields`. After that you can use the same structure like if you get the fields. Please only include fields that you really want to update. Here is a example of the body:
 
-The other alternative is to define the constant `REST_ACF_REQUEST_VERSION` in your `wp-config.php`
+```JSON
+{
+    "fields": {
+            "module_systems_header": {
+                "module_systems_header": {
+                    "prototype_headline": {
+                        "headline": "Just a Headline",
+                        "h1": true,
+                        "subheadline": ""
+                    },
+                    "system_image": false,
+                    "background_color": "bg-transparent"
+                }
+            },
+            "test": "Another test value"
+        }
+}
 
-```PHP
-define( 'REST_ACF_REQUEST_VERSION', 2 );
 ```
 
 Field Settings
@@ -169,20 +182,6 @@ To-do list
 
 https://github.com/airesvsg/to-do-list-rest-acf
 
-
-Get ACF Fields Recursively
-====
-https://github.com/airesvsg/rest-acf-recursive
-
-More details:
-
-- Issues
-  - https://github.com/airesvsg/rest-acf/issues/109
-  - https://github.com/airesvsg/rest-acf/issues/223
-  - https://github.com/airesvsg/rest-acf/issues/9
-
-- Pull Request
-  - https://github.com/airesvsg/rest-acf/pull/95
 
 Cache
 ====
