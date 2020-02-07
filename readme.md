@@ -69,14 +69,6 @@ add_filter( 'acf/rest_api/item_permissions/get', function( $permission ) {
 } );
 ```
 
-Deprecated filters
-====
-| Filter    | Argument(s) |
-|-----------|-----------|
-| acf/rest_api/type | string **$type** |
-| acf/rest_api/types | array **$types** |
-| acf/rest_api/default_rest_base | boolean **$default**<br>string **$type** |
-
 Request API version
 ====
 See below how to select the Request API Version.

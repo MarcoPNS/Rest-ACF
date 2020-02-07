@@ -4,8 +4,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+
+
 if ( ! class_exists( 'REST_ACF_Controller' ) ) {
 	class REST_ACF_Controller extends WP_REST_Controller {
+
 		protected $acf        = null;
 		protected $type       = null;
 		protected $controller = null;
@@ -110,7 +113,7 @@ if ( ! class_exists( 'REST_ACF_Controller' ) ) {
 		}
 
 		public function update_item( $request ) {
-			$item = $this->prepare_item_for_database( $request );
+			$item = $this->prepare_item_for_acf( $request );
 			if ( is_array( $item ) && count( $item ) > 0 ) {
 				foreach ( $item['data'] as $key => $value ) {
 					if ( isset( $item['fields'][ $key ]['key'] ) ) {
@@ -131,7 +134,7 @@ if ( ! class_exists( 'REST_ACF_Controller' ) ) {
 				return new WP_REST_Response( $this->acf->get_fields( $request ), 200 );
 			}
 
-			return new WP_Error( 'cant_update_item', __( 'Cannot update item', 'acf-to-rest-api' ), array( 'status' => 500 ) );
+			return new WP_Error( 'cant_update_item', __( 'Something went wrong. Please check if the fields exists and your first key is **fields**', 'acf-to-rest-api' ), array( 'status' => 500 ) );
 		}
 
 		public function rest_insert( $object, $request, $creating ) {
@@ -146,33 +149,24 @@ if ( ! class_exists( 'REST_ACF_Controller' ) ) {
 			return $this->update_item( $request );
 		}
 
-		public function prepare_item_for_database( $request ) {
+		protected $items;
+
+		public function prepare_item_for_acf( $request ) {
+            global $arrayResult;
 			$item = false;
 			if ( $request instanceof WP_REST_Request ) {
-				$key = apply_filters( 'acf/rest_api/key', 'fields', $request, $this->type );
-				if ( is_string( $key ) && ! empty( $key ) ) {
-					$data  = $request->get_param( $key );
-					$field = $request->get_param( 'field' );
-					$id    = $this->acf->get_id( $request );
-					if ( $id && is_array( $data ) ) {
-						$fields = $this->acf->get_field_objects( $id );
-						if ( is_array( $fields ) && ! empty( $fields ) ) {
-							if ( $field && isset( $data[ $field ] ) ) {
-								$data = array( $field => $data[ $field ] );
-							}
-							$item = array(
-								'id'     => $id,
-								'fields' => $fields,
-								'data'   => $data,
-							);
-						}
-					}
-				}
+                $data  = $request->get_param( 'fields' );
+                $id    = $this->acf->get_id( $request );
+                if ( $id && is_array( $data ) ) {
+                    $this->generateKeysOfJson($data);
+                    var_dump($this->items);
+                }
 			}
 			return apply_filters( 'acf/rest_api/' . $this->type . '/prepare_item', $item, $request );
 		}
 
-		protected function set_default_parameters( &$request ) {
+
+        protected function set_default_parameters( &$request ) {
 			if ( $request instanceof WP_REST_Request ) {
 				$params = $request->get_params();
 				foreach ( self::$default_params as $k => $v ) {
@@ -182,5 +176,30 @@ if ( ! class_exists( 'REST_ACF_Controller' ) ) {
 				}
 			}
 		}
+		protected function generateKeysOfJson($array, $level = 0, $keyString = '', $keys = []){
+            foreach($array as $key => $value){
+                //If $value is an array.
+                if(is_array($value)){
+                    //save the key or add it till we have a value.
+                    $keys[$level] = $key;
+                    if($keyString == '') {
+                        $keyString = $key;
+                    } else {
+                        $keyString = $keyString . '_' . $key;
+                    }
+                    //We need to loop through it.
+                    $this->generateKeysOfJson($value, $level + 1, $keyString, $keys);
+                } else{
+                    if($keyString == '' || $level == 0) {
+                        $finalKey = $key;
+                    } else {
+                        $finalKey = implode ( '_' , array_slice($keys, 0, $level)) . '_' . $key;
+                    }
+
+                    array_push($this->items, $finalKey . ": " . var_export($value, true) . '<br>');
+                }
+            }
+        }
 	}
 }
+
