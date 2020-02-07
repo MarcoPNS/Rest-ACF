@@ -7,12 +7,12 @@ https://wordpress.org/plugins/rest-acf/
 - [Installation](#installation)
 - [Endpoints](#endpoints)
 - [Filters](#filters)
-- [Deprecated Filters ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png)](#deprecated-filters)
-- [Request API Version ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png)](#request-api-version)
-- [Field Settings ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png)](#field-settings)
+- [Deprecated Filters ](#deprecated-filters)
+- [Request API Version ](#request-api-version)
+- [Field Settings ](#field-settings)
 - [Editing the Fields](#editing-the-fields)
 - [Examples](#examples)
-- [Get ACF Fields Recursively ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png)](#get-acf-fields-recursively)
+- [Get ACF Fields Recursively ](#get-acf-fields-recursively)
 - [Cache](#cache)
 
 Installation
@@ -25,42 +25,42 @@ Endpoints
 
 | Endpoint | READABLE | EDITABLE |
 |----------|:--------:|:--------:|
-| /wp-json/acf/v3/posts ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![no](http://airesgoncalves.com.br/screenshot/rest-acf/readme/no.png) |
-| /wp-json/acf/v3/posts/**{id}** | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/posts/**{id}**/**{field-name}** | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/pages ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![no](http://airesgoncalves.com.br/screenshot/rest-acf/readme/no.png) |
-| /wp-json/acf/v3/pages/**{id}** | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/pages/**{id}**/**{field-name}** | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/users ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![no](http://airesgoncalves.com.br/screenshot/rest-acf/readme/no.png) |
-| /wp-json/acf/v3/users/**{id}** | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/users/**{id}**/**{field-name}** | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/**{taxonomy}** ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![no](http://airesgoncalves.com.br/screenshot/rest-acf/readme/no.png) |
-| /wp-json/acf/v3/**{taxonomy}**/**{id}** ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/**{taxonomy}**/**{id}**/**{field-name}** ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/comments ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![no](http://airesgoncalves.com.br/screenshot/rest-acf/readme/no.png) |
-| /wp-json/acf/v3/comments/**{id}** | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/comments/**{id}**/**{field-name}** | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/media ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![no](http://airesgoncalves.com.br/screenshot/rest-acf/readme/no.png) |
-| /wp-json/acf/v3/media/**{id}** | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/media/**{id}**/**{field-name}** | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/**{post-type}** ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![no](http://airesgoncalves.com.br/screenshot/rest-acf/readme/no.png) |
-| /wp-json/acf/v3/**{post-type}**/**{id}** ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/**{post-type}**/**{id}**/**{field-name}** ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/options/**{id}** ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
-| /wp-json/acf/v3/options/**{id}**/**{field-name}** ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) | ![yes](http://airesgoncalves.com.br/screenshot/rest-acf/readme/yes.png) |
+| /wp-json/acf/v4/posts | ✅ | ❌ |
+| /wp-json/acf/v4/posts/**{id}** | ✅ | ✅ |
+| /wp-json/acf/v4/posts/**{id}**/**{field-name}** | ✅ | ✅ |
+| /wp-json/acf/v4/pages  | ✅ | ❌ |
+| /wp-json/acf/v4/pages/**{id}** | ✅ | ✅ |
+| /wp-json/acf/v4/pages/**{id}**/**{field-name}** | ✅ | ✅ |
+| /wp-json/acf/v4/users  | ✅ | ❌ |
+| /wp-json/acf/v4/users/**{id}** | ✅ | ✅ |
+| /wp-json/acf/v4/users/**{id}**/**{field-name}** | ✅ | ✅ |
+| /wp-json/acf/v4/**{taxonomy}**  | ✅ | ❌ |
+| /wp-json/acf/v4/**{taxonomy}**/**{id}**  | ✅ | ✅ |
+| /wp-json/acf/v4/**{taxonomy}**/**{id}**/**{field-name}**  | ✅ | ✅ |
+| /wp-json/acf/v4/comments  | ✅ | ❌ |
+| /wp-json/acf/v4/comments/**{id}** | ✅ | ✅ |
+| /wp-json/acf/v4/comments/**{id}**/**{field-name}** | ✅ | ✅ |
+| /wp-json/acf/v4/media  | ✅ | ❌ |
+| /wp-json/acf/v4/media/**{id}** | ✅ | ✅ |
+| /wp-json/acf/v4/media/**{id}**/**{field-name}** | ✅ | ✅ |
+| /wp-json/acf/v4/**{post-type}**  | ✅ | ❌ |
+| /wp-json/acf/v4/**{post-type}**/**{id}**  | ✅ | ✅ |
+| /wp-json/acf/v4/**{post-type}**/**{id}**/**{field-name}**  | ✅ | ✅ |
+| /wp-json/acf/v4/options/**{id}**  | ✅ | ✅ |
+| /wp-json/acf/v4/options/**{id}**/**{field-name}**  | ✅ | ✅ |
 
 Filters
 ====
 | Filter    | Argument(s) |
 |-----------|-----------|
-| acf/rest_api/id | mixed ( string, integer, boolean ) **$id**<br>string **$type** ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png)<br>string **$controller** ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) |
+| acf/rest_api/id | mixed ( string, integer, boolean ) **$id**<br>string **$type** <br>string **$controller**  |
 | acf/rest_api/key | string **$key**<br>WP_REST_Request **$request**<br>string **$type** |
 | acf/rest_api/item_permissions/get | boolean **$permission**<br>WP_REST_Request **$request**<br>string **$type** |
 | acf/rest_api/item_permissions/update | boolean **$permission**<br>WP_REST_Request **$request**<br>string **$type** |
 | acf/rest_api/**{type}**/prepare_item | mixed ( array, boolean ) **$item**<br>WP_REST_Request **$request** |
 | acf/rest_api/**{type}**/get_fields | mixed ( array, WP_REST_Request ) **$data**<br>mixed ( WP_REST_Request, NULL ) **$request** |
-| acf/rest_api/field_settings/show_in_rest ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | boolean **$show** |
-| acf/rest_api/field_settings/edit_in_rest ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png) | boolean **$edit** |
+| acf/rest_api/field_settings/show_in_rest  | boolean **$show** |
+| acf/rest_api/field_settings/edit_in_rest  | boolean **$edit** |
 
 Basic example of how to use the filters, in this case I will set a new permission to get the fields
 ```PHP
@@ -165,12 +165,12 @@ Sample theme to edit the ACF Fields.
 
 https://github.com/airesvsg/rest-acf-example
 
-To-do list ![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png)
+To-do list 
 
 https://github.com/airesvsg/to-do-list-rest-acf
 
 
-Get ACF Fields Recursively![new](http://airesgoncalves.com.br/screenshot/rest-acf/readme/new-v3.1.png)
+Get ACF Fields Recursively
 ====
 https://github.com/airesvsg/rest-acf-recursive
 
