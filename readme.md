@@ -25,7 +25,7 @@ Endpoints
 
 | Endpoint | READABLE | EDITABLE |
 |----------|:--------:|:--------:|
-| `/wp-json/acf/v4/posts` | ✅ | ❌ |
+| /wp-json/acf/v4/posts | ✅ | ❌ |
 | /wp-json/acf/v4/posts/**{id}** | ✅ | ✅ |
 | /wp-json/acf/v4/posts/**{id}**/**{field-name}** | ✅ | ✅ |
 | /wp-json/acf/v4/pages  | ✅ | ❌ |
